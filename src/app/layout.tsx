@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import NavMenu from "./NavMenu";
 
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavMenu />
-        {children}
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );
